@@ -1,11 +1,33 @@
+@font-face {
+	font-family: AmericanTypewriter;
+	src: url(/static/american-typewriter-1.ttf);
+}
+@font-face {
+	font-family: KingthingsTypewriter;
+	src: url(/static/kingthings-trypewriter-2.ttf);
+}
+
 body,
 html,
-main,
-.app {
+main {
 	padding: 0;
 	margin: 0;
 	height: 100vh;
 	width: 100vw;
+	font-size: 20px;
+	color: var(--blue);
+	font-family: AmericanTypewriter;
+	--red: #cc4a78;
+	--pink: #ed96a8;
+	--yellow: #f5d942;
+	--blue: #005259;
+	--blue-fade: #98b2b5;
+	--blue-grey: #8da99f;
+	--footer-height: 0px;
+}
+
+.flex {
+	display: flex;
 }
 
 .flex-centered {
@@ -13,9 +35,39 @@ main,
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
 }
 
-.page {
-	height: 100%;
-	width: 100%;
+.title {
+	font-family: KingthingsTypewriter;
+	padding: 20px 0 10px 0;
+}
+
+.font-kingthings-typewriter {
+	font-family: KingthingsTypewriter;
+}
+
+.shadow {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.p-m-0 {
+	padding: 0px;
+	margin: 0px;
+}
+
+.p-10 {
+	padding: 10px;
+}
+
+.p-t-10 {
+	padding-top: 10px;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.self-align-start {
+	align-self: start;
 }

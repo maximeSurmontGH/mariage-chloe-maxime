@@ -7,51 +7,75 @@
 </script>
 
 <div class="breadcrumb flex-centered">
-	<div
-		class={`dot ${$stepIndexStore === 'Presentation' ? 'dot-active' : ''}`}
+	<svg
+		width="31"
+		height="31"
+		fill="var(--red)"
+		class={`dot ${$stepIndexStore === 'Presentation' ? 'dot-active dot-active-red' : ''}`}
 		on:click={() => updateStepIndex('Presentation')}
-	/>
-	<div
-		class={`dot ${$stepIndexStore === 'AboutUs' ? 'dot-active' : ''}`}
+	>
+		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
+	</svg>
+	<svg
+		width="31"
+		height="31"
+		fill="var(--pink)"
+		class={`dot ${$stepIndexStore === 'AboutUs' ? 'dot-active dot-active-pink' : ''}`}
 		on:click={() => updateStepIndex('AboutUs')}
-	/>
-	<div
-		class={`dot ${$stepIndexStore === 'WeddingPlace' ? 'dot-active' : ''}`}
+	>
+		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
+	</svg>
+	<svg
+		width="31"
+		height="31"
+		fill="var(--yellow)"
+		class={`dot ${$stepIndexStore === 'WeddingPlace' ? 'dot-active dot-active-yellow' : ''}`}
 		on:click={() => updateStepIndex('WeddingPlace')}
-	/>
-	<div
-		class={`dot ${$stepIndexStore === 'ConfirmYourPresence' ? 'dot-active' : ''}`}
+	>
+		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
+	</svg>
+	<svg
+		width="31"
+		height="31"
+		fill="var(--blue)"
+		class={`dot ${$stepIndexStore === 'ConfirmYourPresence' ? 'dot-active dot-active-blue' : ''}`}
 		on:click={() => updateStepIndex('ConfirmYourPresence')}
-	/>
-	<div
-		class={`dot ${$stepIndexStore === 'WeddingTeam' ? 'dot-active' : ''}`}
-		on:click={() => updateStepIndex('WeddingTeam')}
-	/>
-	<div
-		class={`dot ${$stepIndexStore === 'SeeYouSoon' ? 'dot-active' : ''}`}
-		on:click={() => updateStepIndex('SeeYouSoon')}
-	/>
+	>
+		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
+	</svg>
 </div>
 
 <style>
 	.breadcrumb {
-		position: absolute;
-		bottom: 5%;
 		flex-direction: row;
+		padding: 10px 0;
+		background-color: white;
+		width: 100%;
 	}
 
-	.dot {
-		width: 15px;
-		height: 15px;
-		border-radius: 50%;
-		background-color: rgba(103, 144, 147, 0.6);
-		margin: 0 5px;
+	.dot,
+	.dot-active {
+		padding-bottom: 5px;
 		cursor: pointer;
 	}
 
 	.dot-active {
-		width: 20px;
-		height: 20px;
-		margin: 0;
+		border-bottom: 2px dotted;
+	}
+
+	.dot-active-red {
+		border-color: var(--red);
+	}
+
+	.dot-active-pink {
+		border-color: var(--pink);
+	}
+
+	.dot-active-yellow {
+		border-color: var(--yellow);
+	}
+
+	.dot-active-blue {
+		border-color: var(--blue);
 	}
 </style>
