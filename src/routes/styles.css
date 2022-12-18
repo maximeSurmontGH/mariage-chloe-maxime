@@ -51,6 +51,10 @@ main {
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.w-100 {
+	width: 100%;
+}
+
 .p-m-0 {
 	padding: 0px;
 	margin: 0px;

@@ -14,10 +14,10 @@
 	<svelte:fragment slot="main-content">
 		<div class="content-container flex-centered p-10">
 			<!-- svelte-ignore a11y-media-has-caption -->
-			<video autoplay loop class="shadow">
+			<!-- <video autoplay loop class="shadow">
 				<source src="about-us.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
-			</video>
+			</video> -->
 
 			<Spacer />
 			<p class="text-centered">
@@ -35,14 +35,12 @@
 				heureux, nous adoptons Pixies, un chat presque mignon pour compléter notre petite famille.
 			</p>
 			<p class="text-centered">
-				Et si vous êtes invités au plus beau mariage de l'année 2022, c'est qu'en 2021, Maxime fait
+				Et si vous êtes invités au plus beau mariage de l'année 2023, c'est qu'en 2021, Maxime fait
 				(enfin) sa demande en mariage et un énorme "OUI" retentit.
 			</p>
 			<p class="text-centered">
-				En bref, l’histoire d’amour d’une jeune Picarde et d’un beau Lillois qui filent le parfait
-				amour depuis un peu plus de 7 ans.
-				<br />
-				Et vous êtes invités à venir le célébrer avec nous.
+				En bref, vous êtes invité au mariage d’une jeune Picarde et d’un beau Lillois qui filent le
+				parfait amour depuis un peu plus de 7 ans.
 			</p>
 		</div>
 	</svelte:fragment>

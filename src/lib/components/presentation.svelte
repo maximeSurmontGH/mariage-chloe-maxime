@@ -9,7 +9,7 @@
 			<img src="/logo-mariage.png" alt="logo mariage" />
 			<Spacer height={20} />
 			<p class="p-m-0 text-centered font-kingthings-typewriter">
-				Vous êtes invités à célébrer la mariage de
+				Vous êtes invités à célébrer le mariage de
 			</p>
 			<Spacer height={10} />
 			<p class="p-m-0 text-centered font-kingthings-typewriter">

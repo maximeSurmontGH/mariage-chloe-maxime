@@ -1,6 +1,5 @@
 <script>
 	import PageLayout from './page-layout.svelte';
-	import Spacer from './spacer.component.svelte';
 </script>
 
 <PageLayout>
@@ -13,7 +12,7 @@
 
 	<svelte:fragment slot="main-content">
 		<p class="text-centered">
-			Le mariage prends place à la CENSE DES SOURCES.
+			Le mariage prend place à la CENSE DES SOURCES.
 			<br />
 			Chemin du Vieux Comté
 			<br />
