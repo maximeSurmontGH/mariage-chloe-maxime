@@ -26,6 +26,14 @@ main {
 	--footer-height: 0px;
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.text-white {
+	color: white;
+}
+
 .flex {
 	display: flex;
 }
