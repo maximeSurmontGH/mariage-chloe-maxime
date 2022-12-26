@@ -127,7 +127,7 @@
 						/>
 
 						{#if guestNameSearchInput.length > 2 && filteredGuests.length > 0}
-							<div class="filter-options-container" in:slide>
+							<div class="cursor-pointer filter-options-container" in:slide>
 								{#each filteredGuests as filteredGuest}
 									<p
 										class="filter-option"
@@ -312,7 +312,6 @@
 		font-family: AmericanTypewriter;
 		font-size: 20px;
 		color: white;
-		cursor: pointer;
 	}
 
 	button:hover {
@@ -341,7 +340,6 @@
 	.filter-option {
 		padding: 0;
 		margin: 0;
-		cursor: pointer;
 		padding: 10px;
 	}
 

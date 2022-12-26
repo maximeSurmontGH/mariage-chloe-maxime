@@ -26,6 +26,7 @@ main {
 	--footer-height: 0px;
 }
 
+button,
 .cursor-pointer {
 	cursor: pointer;
 }

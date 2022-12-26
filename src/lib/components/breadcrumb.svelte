@@ -11,7 +11,9 @@
 		width="31"
 		height="31"
 		fill="var(--red)"
-		class={`dot ${$stepIndexStore === 'Presentation' ? 'dot-active dot-active-red' : ''}`}
+		class={`dot cursor-pointer ${
+			$stepIndexStore === 'Presentation' ? 'dot-active dot-active-red' : ''
+		}`}
 		on:click={() => updateStepIndex('Presentation')}
 	>
 		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
@@ -20,7 +22,9 @@
 		width="31"
 		height="31"
 		fill="var(--pink)"
-		class={`dot ${$stepIndexStore === 'AboutUs' ? 'dot-active dot-active-pink' : ''}`}
+		class={`dot cursor-pointer ${
+			$stepIndexStore === 'AboutUs' ? 'dot-active dot-active-pink' : ''
+		}`}
 		on:click={() => updateStepIndex('AboutUs')}
 	>
 		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
@@ -29,7 +33,9 @@
 		width="31"
 		height="31"
 		fill="var(--yellow)"
-		class={`dot ${$stepIndexStore === 'WeddingPlace' ? 'dot-active dot-active-yellow' : ''}`}
+		class={`dot cursor-pointer ${
+			$stepIndexStore === 'WeddingPlace' ? 'dot-active dot-active-yellow' : ''
+		}`}
 		on:click={() => updateStepIndex('WeddingPlace')}
 	>
 		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
@@ -38,7 +44,9 @@
 		width="31"
 		height="31"
 		fill="var(--blue)"
-		class={`dot ${$stepIndexStore === 'ConfirmYourPresence' ? 'dot-active dot-active-blue' : ''}`}
+		class={`dot cursor-pointer ${
+			$stepIndexStore === 'ConfirmYourPresence' ? 'dot-active dot-active-blue' : ''
+		}`}
 		on:click={() => updateStepIndex('ConfirmYourPresence')}
 	>
 		<rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
@@ -56,7 +64,6 @@
 	.dot,
 	.dot-active {
 		padding-bottom: 5px;
-		cursor: pointer;
 	}
 
 	.dot-active {

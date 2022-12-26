@@ -224,6 +224,10 @@
 >
 
 <style>
+	* {
+		cursor: url('mouse-1.png'), auto !important;
+	}
+
 	#eU3ZXjywcFh8_to {
 		animation: eU3ZXjywcFh8_to__to 2000ms linear infinite normal forwards;
 	}
