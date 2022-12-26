@@ -5,7 +5,6 @@
 	import LoadingPage from '../lib/components/loading-page.svelte';
 	import Presentation from '../lib/components/presentation.svelte';
 	import WeddingPlace from '../lib/components/wedding-place.svelte';
-	import WeddingTeam from '../lib/components/wedding-team.svelte';
 	import { stepIndexStore } from '../lib/stores/step-index.store';
 	import { fade } from 'svelte/transition';
 

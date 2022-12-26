@@ -83,3 +83,7 @@ main {
 .self-align-start {
 	align-self: start;
 }
+
+.pictures-container {
+	position: relative;
+}

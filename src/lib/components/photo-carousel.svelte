@@ -60,12 +60,13 @@
 		left: 0;
 		z-index: 3;
 		backdrop-filter: blur(6px);
+		-webkit-backdrop-filter: blur(6px);
 	}
 
 	img {
 		z-index: -1;
-		width: 410px;
 		max-width: 90%;
+		max-height: 80%;
 		border: 10px solid white;
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	}

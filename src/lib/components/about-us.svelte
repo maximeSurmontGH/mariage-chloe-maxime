@@ -84,10 +84,6 @@
 </PageLayout>
 
 <style>
-	.pictures-container {
-		position: relative;
-	}
-
 	img {
 		width: 50%;
 		border: 5px solid white;
@@ -111,13 +107,5 @@
 	.picture-4 {
 		width: 80%;
 		transform: rotate(5deg);
-	}
-
-	video {
-		width: 50%;
-		width: 300px;
-		aspect-ratio: 1 / 1;
-		border-radius: 50%;
-		object-fit: fill;
 	}
 </style>
