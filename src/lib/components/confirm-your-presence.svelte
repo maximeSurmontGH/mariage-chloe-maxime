@@ -7,10 +7,14 @@
 	import { slide } from 'svelte/transition';
 	import { testStringSimilarity } from '../utils/string.utils';
 	import { fade } from 'svelte/transition';
+	import { confetti } from '@neoconfetti/svelte';
+	import { tick } from 'svelte';
 
 	let guest = undefined;
 	let guestNameSearchInput = '';
 	let guestNames = [];
+	let displayConfetti = false;
+
 	const accompanyingRegex = new RegExp(/(mr)|(Mr)|(mme)|(Mme)|(\+1)/, 'g');
 
 	$: guestNamesSimilarity = guestNameSearchInput
@@ -84,8 +88,16 @@
 		});
 		responseSend = true;
 		clearFields();
+		displayConfetti = false;
+		await tick();
+		displayConfetti = true;
 	};
 </script>
+
+{#if displayConfetti}
+	<div style="position: absolute; left: 0;" use:confetti />
+	<div style="position: absolute; right: 0;" use:confetti />
+{/if}
 
 {#await fetchGuestsList()}
 	<span transition:fade>
@@ -129,6 +141,7 @@
 						{#if guestNameSearchInput.length > 2 && filteredGuests.length > 0}
 							<div class="cursor-pointer filter-options-container" in:slide>
 								{#each filteredGuests as filteredGuest}
+									<!-- svelte-ignore a11y-click-events-have-key-events -->
 									<p
 										class="filter-option"
 										on:click={() => {
