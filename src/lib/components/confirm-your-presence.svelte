@@ -15,7 +15,8 @@
 	let guestNames = [];
 	let displayConfetti = false;
 
-	const accompanyingRegex = new RegExp(/(mr)|(Mr)|(mme)|(Mme)|(\+1)/, 'g');
+	// const accompanyingRegex = new RegExp(/(mr)|(Mr)|(mme)|(Mme)|(Fille)|(\+1)/, 'g');
+	const accompanyingRegex = new RegExp(/(Fille)|(\+1)/, 'g');
 
 	$: guestNamesSimilarity = guestNameSearchInput
 		? stringSimilarity.findBestMatch(guestNameSearchInput?.toUpperCase() || '', guestNames)
@@ -31,13 +32,17 @@
 			(guest) =>
 				guest.first_name &&
 				guest.last_name &&
-				!accompanyingRegex.test(`${guest.first_name} ${guest.last_name}`) &&
 				testStringSimilarity(
 					`${guest.first_name} ${guest.last_name}`,
 					guestNameSearchInput,
 					guestNamesSimilarity?.bestMatch?.rating
 				)
-		);
+		)
+		.map((guest) => ({
+			...guest,
+			first_name: guest.first_name.replace(accompanyingRegex, ''),
+			last_name: guest.last_name
+		}));
 
 	const fetchGuestsList = async () => {
 		await airtableStore.fetch();
@@ -135,7 +140,7 @@
 							bind:value={guestNameSearchInput}
 							class="w-100"
 							type="text"
-							placeholder="Qui es tu ?"
+							placeholder="Qui es tu ? (ton nom prénom)"
 						/>
 
 						{#if guestNameSearchInput.length > 2 && filteredGuests.length > 0}
@@ -158,8 +163,8 @@
 						{:else if guestNameSearchInput.length > 3 && filteredGuests.length === 0}
 							<p class="not-found-container" in:slide>
 								Oups ! On ne t'a pas trouvé , le développeur ne doit pas être très doué ! <Spacer />
-								Essaies avec une autre orthographe, sinon tu devras répondre avec le bordereau de réponse
-								!
+								Essaies avec une autre orthographe ou changer le sens nom/prénom, sinon tu devras répondre
+								avec le bordereau de réponse !
 							</p>
 						{/if}
 					{:else}
