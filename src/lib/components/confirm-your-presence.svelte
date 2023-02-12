@@ -54,9 +54,9 @@
 
 	$: isButtonDisabled = !name || !adultCount;
 
-	let ceremonyAndCocktail = true;
-	let dinner = true;
-	let bounce = true;
+	let ceremonyAndCocktail = undefined;
+	let dinner = undefined;
+	let bounce = undefined;
 	let name = '';
 	let adultCount = 0;
 	let childCount = 0;
@@ -67,9 +67,9 @@
 	const clearFields = () => {
 		guest = undefined;
 		guestNameSearchInput = '';
-		ceremonyAndCocktail = true;
-		dinner = true;
-		bounce = true;
+		ceremonyAndCocktail = undefined;
+		dinner = undefined;
+		bounce = undefined;
 		name = '';
 		adultCount = 0;
 		childCount = 0;
@@ -87,6 +87,7 @@
 			bounce,
 			name,
 			adultCount,
+			childCount,
 			diet,
 			allergy,
 			comment
@@ -96,6 +97,15 @@
 		displayConfetti = false;
 		await tick();
 		displayConfetti = true;
+	};
+
+	const setGuest = async (filteredGuest) => {
+		guest = filteredGuest;
+		console.log(guest);
+		ceremonyAndCocktail = !!guest.ceremony_and_cocktail;
+		dinner = !!guest.dinner;
+		bounce = !!guest.bounce;
+		name = `${filteredGuest.first_name} ${filteredGuest.last_name?.toUpperCase()}`;
 	};
 </script>
 
@@ -147,15 +157,7 @@
 							<div class="cursor-pointer filter-options-container" in:slide>
 								{#each filteredGuests as filteredGuest}
 									<!-- svelte-ignore a11y-click-events-have-key-events -->
-									<p
-										class="filter-option"
-										on:click={() => {
-											guest = filteredGuest;
-											name = `${
-												filteredGuest.first_name
-											} ${filteredGuest.last_name?.toUpperCase()}`;
-										}}
-									>
+									<p class="filter-option" on:click={() => setGuest(filteredGuest)}>
 										{`${filteredGuest.first_name} ${filteredGuest.last_name?.toUpperCase()}`}
 									</p>
 								{/each}
