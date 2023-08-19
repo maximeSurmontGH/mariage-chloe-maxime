@@ -5,6 +5,7 @@
 	import LoadingPage from '../lib/components/loading-page.svelte';
 	import Presentation from '../lib/components/presentation.svelte';
 	import WeddingPlace from '../lib/components/wedding-place.svelte';
+	import After from '../lib/components/after.svelte';
 	import { stepIndexStore } from '../lib/stores/step-index.store';
 	import { fade } from 'svelte/transition';
 
@@ -25,6 +26,10 @@
 {#if loading}
 	<span out:fade>
 		<LoadingPage />
+	</span>
+{:else if $stepIndexStore === 'After'}
+	<span transition:fade>
+		<After />
 	</span>
 {:else if $stepIndexStore === 'Presentation'}
 	<span transition:fade>
