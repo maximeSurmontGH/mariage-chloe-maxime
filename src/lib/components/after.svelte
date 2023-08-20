@@ -1,17 +1,12 @@
 <script>
-	// import { stepIndexStore } from '../stores/step-index.store';
-
-	// const updateStepIndex = (newIndex) => {
-	// 	$stepIndexStore = newIndex;
-	// };
 </script>
 
-<div class="background-image" />
+<svelte:head>
+	<link rel="preload" as="image" href="C&M-304.jpg" />
+</svelte:head>
 
 <div class="content-container">
-	<!-- <button class="menu-button-container" on:click={() => updateStepIndex('Presentation')}>
-		<img class="menu-button" src="/logo-mariage.png" alt="logo mariage" />
-	</button> -->
+	<img class="picture-1" src="C&M-304.jpg" alt="chloé et maxime" />
 
 	<div class="iframe-container">
 		<!-- @source : https://developers.google.com/youtube/player_parameters?hl=fr -->
@@ -30,13 +25,13 @@
 				target="_blank"
 				rel="noreferrer"
 				><svg
-					width="250"
+					width="300"
 					height="30"
 					xmlns="http://www.w3.org/2000/svg"
 					class="font-kingthings-typewriter"
 				>
-					<polygon fill="var(--red)" points="0,0 250,0 235,15 250,30 0,30 15,15" />
-					<text x="30" y="20" font-size="14" fill="white"> Photos du mariage civil </text>
+					<polygon fill="var(--red)" points="0,0 300,0 285,15 300,30 0,30 15,15" />
+					<text x="29" y="20" font-size="18" fill="white"> Photos du mariage civil </text>
 				</svg>
 			</a>
 
@@ -45,13 +40,13 @@
 				target="_blank"
 				rel="noreferrer"
 				><svg
-					width="250"
+					width="300"
 					height="30"
 					xmlns="http://www.w3.org/2000/svg"
 					class="font-kingthings-typewriter"
 				>
-					<polygon fill="var(--red)" points="0,0 250,0 235,15 250,30 0,30 15,15" />
-					<text x="21" y="20" font-size="14" fill="white"> Photos du mariage laïque </text>
+					<polygon fill="var(--red)" points="0,0 300,0 285,15 300,30 0,30 15,15" />
+					<text x="22" y="20" font-size="18" fill="white"> Photos du mariage laïque </text>
 				</svg>
 			</a>
 
@@ -60,13 +55,13 @@
 				target="_blank"
 				rel="noreferrer"
 				><svg
-					width="250"
+					width="300"
 					height="30"
 					xmlns="http://www.w3.org/2000/svg"
 					class="font-kingthings-typewriter"
 				>
-					<polygon fill="var(--red)" points="0,0 250,0 235,15 250,30 0,30 15,15" />
-					<text x="39" y="20" font-size="14" fill="white">Photos du photo-booth</text>
+					<polygon fill="var(--red)" points="0,0 300,0 285,15 300,30 0,30 15,15" />
+					<text x="40" y="20" font-size="18" fill="white">Photos du photo-booth</text>
 				</svg>
 			</a>
 
@@ -75,28 +70,25 @@
 				target="_blank"
 				rel="noreferrer"
 				><svg
-					width="250"
+					width="300"
 					height="30"
 					xmlns="http://www.w3.org/2000/svg"
 					class="font-kingthings-typewriter"
 				>
-					<polygon fill="var(--red)" points="0,0 250,0 235,15 250,30 0,30 15,15" />
-					<text x="22" y="20" font-size="14" fill="white">Venez partager vos photos</text>
+					<polygon fill="var(--red)" points="0,0 300,0 285,15 300,30 0,30 15,15" />
+					<text x="18" y="20" font-size="18" fill="white">Venez partager vos photos</text>
 				</svg>
 			</a>
 
-			<a
-				href="https://drive.google.com/drive/folders/1jxhVlN4jxTk6d7rLTuF24FYJFn_q_eV1?usp=sharing"
-				target="_blank"
-				rel="noreferrer"
+			<a href="https://youtu.be/OikTb4HmYSM" target="_blank" rel="noreferrer"
 				><svg
-					width="250"
+					width="300"
 					height="30"
 					xmlns="http://www.w3.org/2000/svg"
 					class="font-kingthings-typewriter"
 				>
-					<polygon fill="var(--red)" points="0,0 250,0 235,15 250,30 0,30 15,15" />
-					<text x="35" y="20" font-size="14" fill="white">Vidéo en version longue</text>
+					<polygon fill="var(--red)" points="0,0 300,0 285,15 300,30 0,30 15,15" />
+					<text x="29" y="20" font-size="18" fill="white">Vidéo en version longue</text>
 				</svg>
 			</a>
 		</div>
@@ -119,54 +111,25 @@
 </div>
 
 <style>
-	.background-image {
-		position: absolute;
-		background-image: url('C&M-304.jpg');
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 100%;
-		width: 100%;
-		z-index: -1;
-		left: 0;
-		top: 0;
-	}
-
-	/* Effet blur */
-	.background-image::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		z-index: 2;
-		width: 100%;
-		height: 100%;
-		-webkit-backdrop-filter: blur(2px) brightness(0.95) opacity(1);
-		backdrop-filter: blur(2px) brightness(0.95) opacity(1);
-		pointer-events: none;
-		left: 0;
-		top: 0;
-	}
-
-	/* .menu-button-container {
-		background: none;
-		border: none;
-		position: absolute;
-		top: 10px;
-		left: 10px;
-	} */
-
-	/* .menu-button {
-		width: 200px;
-		height: 200px;
-	} */
-
 	.content-container {
 		width: 100vw;
 		height: 100vh;
+		min-height: 100vh;
+		max-height: 100vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		overflow: hidden;
+		position: relative;
+	}
+
+	img {
+		position: absolute;
+		min-height: 100%;
+		width: auto;
+		min-width: 100%;
+		z-index: -1;
 	}
 
 	.iframe-container {
